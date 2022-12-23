@@ -1,0 +1,16 @@
+ <div class="container">
+  <div class="row">
+    <div class="col-lg-12 mt-5">
+      <div class="mx-auto mt-5" style="width: 400px">
+        <%= form_with(url: search_path, method: 'get', local: true) do %>
+          <div class="form-group">
+            <%= label_tag :museum, 'Search for a museum '%>
+            <%= text_field_tag :lat, nil, placeholder: 'Eg. 52.494857', class: 'form-control' %>
+            <%= text_field_tag :long, nil, placeholder: 'Eg. 13.437641', class: 'form-control' %>
+          </div>
+          <%= button_tag 'Search', class: 'btn btn-success btn-block' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

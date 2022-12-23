@@ -1,0 +1,845 @@
+  [1m[35m (0.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "backend_challenge_1_development"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "backend_challenge_1_test"[0m
+  [1m[35m (449.1ms)[0m  [1m[35mCREATE DATABASE "backend_challenge_1_development" ENCODING = 'unicode'[0m
+  [1m[35m (396.1ms)[0m  [1m[35mCREATE DATABASE "backend_challenge_1_test" ENCODING = 'unicode'[0m
+  [1m[35m (34.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (24.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3075230645324917380)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-12-21 13:00:01.263775"], ["updated_at", "2022-12-21 13:00:01.263775"]]
+  [1m[36mTRANSACTION (11.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(3075230645324917380)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2022-12-21 13:26:34 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 10.9ms | Allocations: 392)
+  Rendered layout layouts/application.html.erb (Duration: 10257.0ms | Allocations: 153528)
+Completed 200 OK in 10312ms (Views: 10280.7ms | ActiveRecord: 0.0ms | Allocations: 157664)
+
+
+Started GET "/" for ::1 at 2022-12-22 11:46:36 +0000
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.9ms | Allocations: 112)
+  Rendered layout layouts/application.html.erb (Duration: 25.1ms | Allocations: 8990)
+Completed 200 OK in 28ms (Views: 27.1ms | Allocations: 9893)
+
+
+Started GET "/" for ::1 at 2022-12-22 12:03:54 +0000
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 254.2ms | Allocations: 12178)
+  Rendered layout layouts/application.html.erb (Duration: 255.3ms | Allocations: 12275)
+Completed 500 Internal Server Error in 261ms (Allocations: 13161)
+
+
+  
+ActionView::Template::Error (undefined method `model_name' for nil:NilClass
+
+      convert_to_model(record_or_class).model_name
+                                       ^^^^^^^^^^^):
+    1: <h1>Museums</h1>
+    2: <%= simple_form_for @museum do |f| %>
+    3:   <%= f.input :long %>
+    4:   <%= f.input :lat %>
+    5:   <%= f.button :submit %>
+  
+app/views/pages/home.html.erb:2
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3075230645324917380)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (6.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3075230645324917380)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2022-12-22 12:09:45 +0000
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1674)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 1763)
+Completed 500 Internal Server Error in 4ms (Allocations: 2313)
+
+
+  
+ActionView::Template::Error (undefined method `model_name' for nil:NilClass
+
+      convert_to_model(record_or_class).model_name
+                                       ^^^^^^^^^^^):
+    1: <h1>Museums</h1>
+    2: <%= simple_form_for @museum do |f| %>
+    3:   <%= f.input :long %>
+    4:   <%= f.input :lat %>
+    5:   <%= f.button :submit %>
+  
+app/views/pages/home.html.erb:2
+Started GET "/" for ::1 at 2022-12-22 12:11:04 +0000
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 7.1ms | Allocations: 4569)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 4658)
+Completed 500 Internal Server Error in 10ms (Allocations: 5414)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `museum' for #<ActionView::Base:0x0000000002da28>
+
+'.freeze;@output_buffer.append=  simple_form_for museum do |f| @output_buffer.safe_append='
+                                                 ^^^^^^):
+    1: <h1>Museums</h1>
+    2: <%= simple_form_for museum do |f| %>
+    3:   <%= f.input :long %>
+    4:   <%= f.input :lat %>
+    5:   <%= f.button :submit %>
+  
+app/views/pages/home.html.erb:2
+Started GET "/" for ::1 at 2022-12-22 12:21:44 +0000
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 44.8ms | Allocations: 14413)
+  Rendered layout layouts/application.html.erb (Duration: 62.7ms | Allocations: 23205)
+Completed 200 OK in 66ms (Views: 65.1ms | Allocations: 23988)
+
+
+Started GET "/" for ::1 at 2022-12-22 12:23:09 +0000
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 15.7ms | Allocations: 8179)
+  Rendered layout layouts/application.html.erb (Duration: 31.8ms | Allocations: 16935)
+Completed 200 OK in 34ms (Views: 33.4ms | Allocations: 17742)
+
+
+Started POST "/search" for ::1 at 2022-12-22 12:23:23 +0000
+  
+ActionController::RoutingError (No route matches [POST] "/search"):
+  
+Started GET "/" for ::1 at 2022-12-22 12:23:23 +0000
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 23.9ms | Allocations: 7862)
+  Rendered layout layouts/application.html.erb (Duration: 54.2ms | Allocations: 16193)
+Completed 200 OK in 56ms (Views: 55.9ms | Allocations: 16463)
+
+
+Started POST "/search" for ::1 at 2022-12-22 12:23:31 +0000
+  
+ActionController::RoutingError (No route matches [POST] "/search"):
+  
+Started GET "/" for ::1 at 2022-12-22 12:23:31 +0000
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 10.1ms | Allocations: 7698)
+  Rendered layout layouts/application.html.erb (Duration: 33.9ms | Allocations: 16102)
+Completed 200 OK in 35ms (Views: 34.5ms | Allocations: 16334)
+
+
+Started GET "/" for ::1 at 2022-12-22 12:42:20 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 65.1ms | Allocations: 15099)
+  Rendered layout layouts/application.html.erb (Duration: 464.9ms | Allocations: 58230)
+Completed 200 OK in 476ms (Views: 469.2ms | ActiveRecord: 0.0ms | Allocations: 61134)
+
+
+Started POST "/search" for ::1 at 2022-12-22 12:42:26 +0000
+  
+ActionController::RoutingError (No route matches [POST] "/search"):
+  
+Started GET "/" for ::1 at 2022-12-22 12:42:26 +0000
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 10.5ms | Allocations: 7928)
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 16379)
+Completed 200 OK in 31ms (Views: 27.8ms | ActiveRecord: 0.0ms | Allocations: 16658)
+
+
+Started GET "/search" for ::1 at 2022-12-22 12:46:39 +0000
+Processing by MuseumsController#search as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 0.6ms | Allocations: 260)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 8925)
+Completed 200 OK in 225ms (Views: 19.2ms | ActiveRecord: 0.0ms | Allocations: 11232)
+
+
+Started POST "/search" for ::1 at 2022-12-22 12:46:58 +0000
+  
+ActionController::RoutingError (No route matches [POST] "/search"):
+  
+Started GET "/" for ::1 at 2022-12-22 12:46:58 +0000
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 8.2ms | Allocations: 7820)
+  Rendered layout layouts/application.html.erb (Duration: 23.5ms | Allocations: 16046)
+Completed 200 OK in 24ms (Views: 24.1ms | ActiveRecord: 0.0ms | Allocations: 16300)
+
+
+Started POST "/search" for ::1 at 2022-12-22 12:47:02 +0000
+  
+ActionController::RoutingError (No route matches [POST] "/search"):
+  
+Started GET "/" for ::1 at 2022-12-22 12:47:02 +0000
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 8.1ms | Allocations: 7720)
+  Rendered layout layouts/application.html.erb (Duration: 23.1ms | Allocations: 16068)
+Completed 200 OK in 24ms (Views: 23.9ms | ActiveRecord: 0.0ms | Allocations: 16305)
+
+
+Started GET "/search" for ::1 at 2022-12-22 12:47:16 +0000
+Processing by MuseumsController#search as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 0.4ms | Allocations: 134)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 8516)
+Completed 200 OK in 114ms (Views: 15.4ms | ActiveRecord: 0.0ms | Allocations: 9922)
+
+
+Started GET "/" for ::1 at 2022-12-22 12:55:51 +0000
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 8.8ms | Allocations: 7950)
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | Allocations: 16475)
+Completed 200 OK in 25ms (Views: 24.4ms | Allocations: 17054)
+
+
+Started POST "/search" for ::1 at 2022-12-22 12:56:23 +0000
+  
+ActionController::RoutingError (No route matches [POST] "/search"):
+  
+Started GET "/" for ::1 at 2022-12-22 12:56:24 +0000
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 14.0ms | Allocations: 7711)
+  Rendered layout layouts/application.html.erb (Duration: 34.2ms | Allocations: 15937)
+Completed 200 OK in 35ms (Views: 34.9ms | Allocations: 16189)
+
+
+Started GET "/" for ::1 at 2022-12-22 12:59:43 +0000
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.4ms | Allocations: 617)
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 9420)
+Completed 200 OK in 21ms (Views: 20.4ms | Allocations: 10179)
+
+
+Started GET "/" for ::1 at 2022-12-22 12:59:51 +0000
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.8ms | Allocations: 595)
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 9538)
+Completed 200 OK in 24ms (Views: 22.8ms | Allocations: 10320)
+
+
+Started GET "/search?lat=52.494857&long=13.437641&button=" for ::1 at 2022-12-22 13:00:27 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"lat"=>"52.494857", "long"=>"13.437641", "button"=>""}
+Completed 400 Bad Request in 1ms (Allocations: 517)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: museum):
+  
+app/controllers/museums_controller.rb:16:in `museum_params'
+app/controllers/museums_controller.rb:6:in `search'
+Started GET "/" for ::1 at 2022-12-22 13:00:27 +0000
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.6ms | Allocations: 592)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 9517)
+Completed 200 OK in 22ms (Views: 20.7ms | Allocations: 10248)
+
+
+Started GET "/" for ::1 at 2022-12-22 13:02:33 +0000
+Processing by MuseumsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering museums/index.html.erb within layouts/application
+  Rendered museums/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 603)
+  Rendered layout layouts/application.html.erb (Duration: 32.6ms | Allocations: 9547)
+Completed 200 OK in 36ms (Views: 35.3ms | Allocations: 10450)
+
+
+Started GET "/searchlat=52.494857&lng=13.437641" for ::1 at 2022-12-22 13:10:21 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/searchlat=52.494857&lng=13.437641"):
+  
+Started GET "/search?lat=52.494857&lng=13.437641" for ::1 at 2022-12-22 13:10:28 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"lat"=>"52.494857", "lng"=>"13.437641"}
+Completed 400 Bad Request in 1ms (Allocations: 499)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: museum):
+  
+app/controllers/museums_controller.rb:16:in `museum_params'
+app/controllers/museums_controller.rb:6:in `search'
+Started PUT "/__web_console/repl_sessions/1e0625163ad5937eefebc7a0dbca6f43" for ::1 at 2022-12-22 13:10:47 +0000
+Started PUT "/__web_console/repl_sessions/1e0625163ad5937eefebc7a0dbca6f43" for ::1 at 2022-12-22 13:10:48 +0000
+Started GET "/search?lat=52.494857&long=13.437641" for ::1 at 2022-12-22 13:11:19 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"lat"=>"52.494857", "long"=>"13.437641"}
+Completed 400 Bad Request in 0ms (Allocations: 502)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: museum):
+  
+app/controllers/museums_controller.rb:16:in `museum_params'
+app/controllers/museums_controller.rb:6:in `search'
+Started PUT "/__web_console/repl_sessions/26418f4d57f5ad362cb2b47436db4cb3" for ::1 at 2022-12-22 13:11:22 +0000
+Started PUT "/__web_console/repl_sessions/26418f4d57f5ad362cb2b47436db4cb3" for ::1 at 2022-12-22 13:11:22 +0000
+Started GET "/search?lat=52.494857&long=13.437641" for ::1 at 2022-12-22 13:11:39 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"lat"=>"52.494857", "long"=>"13.437641"}
+Completed 500 Internal Server Error in 9ms (Allocations: 3148)
+
+
+  
+NameError (undefined local variable or method `museum_params' for #<MuseumsController:0x0000000002e9a0>
+
+    @museums = find_museums(museum_params)
+                            ^^^^^^^^^^^^^):
+  
+app/controllers/museums_controller.rb:6:in `search'
+Started GET "/search?lat=52.494857&long=13.437641" for ::1 at 2022-12-22 13:12:06 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"lat"=>"52.494857", "long"=>"13.437641"}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 1.1ms | Allocations: 251)
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 9064)
+Completed 200 OK in 210ms (Views: 21.2ms | Allocations: 10914)
+
+
+Started GET "/" for ::1 at 2022-12-22 13:12:19 +0000
+Processing by MuseumsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering museums/index.html.erb within layouts/application
+  Rendered museums/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 328)
+  Rendered layout layouts/application.html.erb (Duration: 24.3ms | Allocations: 8724)
+Completed 200 OK in 25ms (Views: 24.9ms | Allocations: 8973)
+
+
+Started GET "/search?lat=52.494857&long=13.437641+&button=" for ::1 at 2022-12-22 13:12:50 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"lat"=>"52.494857", "long"=>"13.437641 ", "button"=>""}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 0.6ms | Allocations: 135)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 8526)
+Completed 200 OK in 160ms (Views: 16.1ms | Allocations: 9916)
+
+
+Started GET "/" for ::1 at 2022-12-23 11:32:24 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MuseumsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering museums/index.html.erb within layouts/application
+  Rendered museums/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 919)
+  Rendered layout layouts/application.html.erb (Duration: 196.8ms | Allocations: 44529)
+Completed 200 OK in 210ms (Views: 201.1ms | ActiveRecord: 0.0ms | Allocations: 47434)
+
+
+Started GET "/search?lat=23489&long=39487&button=" for ::1 at 2022-12-23 11:32:32 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"lat"=>"23489", "long"=>"39487", "button"=>""}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 2.0ms | Allocations: 259)
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 8731)
+Completed 200 OK in 216ms (Views: 21.7ms | ActiveRecord: 0.0ms | Allocations: 10697)
+
+
+Started GET "/search?lat=51.491645&long=-1.517126&button=" for ::1 at 2022-12-23 11:33:08 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"lat"=>"51.491645", "long"=>"-1.517126", "button"=>""}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 0.6ms | Allocations: 136)
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 8527)
+Completed 200 OK in 151ms (Views: 21.3ms | ActiveRecord: 0.0ms | Allocations: 9852)
+
+
+Started GET "/search?lat=51.491645&long=-1.517126&button=" for ::1 at 2022-12-23 11:39:44 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"lat"=>"51.491645", "long"=>"-1.517126", "button"=>""}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 0.5ms | Allocations: 141)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 8801)
+Completed 200 OK in 210ms (Views: 16.3ms | Allocations: 10514)
+
+
+Started GET "/" for ::1 at 2022-12-23 11:39:56 +0000
+Processing by MuseumsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering museums/index.html.erb within layouts/application
+  Rendered museums/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 328)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 8728)
+Completed 200 OK in 19ms (Views: 18.7ms | Allocations: 8979)
+
+
+Started GET "/search?lat=51.420897060236975&long=-0.2897646880960085&button=" for ::1 at 2022-12-23 11:41:22 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"lat"=>"51.420897060236975", "long"=>"-0.2897646880960085", "button"=>""}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 0.4ms | Allocations: 135)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 8538)
+Completed 200 OK in 178ms (Views: 14.0ms | Allocations: 9924)
+
+
+Started GET "/search?lat=51.420897060236975&long=-0.2897646880960085&button=" for ::1 at 2022-12-23 11:44:23 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"lat"=>"51.420897060236975", "long"=>"-0.2897646880960085", "button"=>""}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 0.3ms | Allocations: 141)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 8798)
+Completed 200 OK in 241ms (Views: 15.7ms | Allocations: 10504)
+
+
+Started GET "/search?lat=51.420897060236975&long=-0.2897646880960085&button=" for ::1 at 2022-12-23 11:44:28 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"lat"=>"51.420897060236975", "long"=>"-0.2897646880960085", "button"=>""}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 0.3ms | Allocations: 135)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 8529)
+Completed 200 OK in 113ms (Views: 15.3ms | Allocations: 9934)
+
+
+Started GET "/search?lat=51.420897060236975&long=-0.2897646880960085&button=" for ::1 at 2022-12-23 11:44:34 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"lat"=>"51.420897060236975", "long"=>"-0.2897646880960085", "button"=>""}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 0.3ms | Allocations: 141)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 8813)
+Completed 200 OK in 118ms (Views: 15.5ms | Allocations: 10548)
+
+
+Started GET "/" for ::1 at 2022-12-23 11:44:38 +0000
+Processing by MuseumsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering museums/index.html.erb within layouts/application
+  Rendered museums/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 328)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 8727)
+Completed 200 OK in 16ms (Views: 16.1ms | Allocations: 8976)
+
+
+Started GET "/search?lat=51.42046886986565&long=-0.2895071960526674&button=" for ::1 at 2022-12-23 11:45:00 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"lat"=>"51.42046886986565", "long"=>"-0.2895071960526674", "button"=>""}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 0.4ms | Allocations: 135)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 8520)
+Completed 200 OK in 180ms (Views: 14.4ms | Allocations: 9878)
+
+
+Started GET "/search?lat=51.42046886986565&long=-0.2895071960526674&button=" for ::1 at 2022-12-23 11:45:26 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"lat"=>"51.42046886986565", "long"=>"-0.2895071960526674", "button"=>""}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 0.4ms | Allocations: 135)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 8514)
+Completed 200 OK in 124ms (Views: 13.3ms | Allocations: 9812)
+
+
+Started GET "/search?lat=51.42046886986565&long=-0.2895071960526674&button=" for ::1 at 2022-12-23 11:48:07 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"lat"=>"51.42046886986565", "long"=>"-0.2895071960526674", "button"=>""}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 0.8ms | Allocations: 141)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 9119)
+Completed 200 OK in 216ms (Views: 16.1ms | Allocations: 10829)
+
+
+Started GET "/" for ::1 at 2022-12-23 11:48:10 +0000
+Processing by MuseumsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering museums/index.html.erb within layouts/application
+  Rendered museums/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 328)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 8765)
+Completed 200 OK in 21ms (Views: 20.1ms | Allocations: 9017)
+
+
+Started GET "/search?lat=51.419987150902855&long=-0.29233960852941976&button=" for ::1 at 2022-12-23 11:48:27 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"lat"=>"51.419987150902855", "long"=>"-0.29233960852941976", "button"=>""}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 0.4ms | Allocations: 135)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 8694)
+Completed 200 OK in 193ms (Views: 13.7ms | Allocations: 10074)
+
+
+Started GET "/search?lat=51.41&long=-0.292&button=" for ::1 at 2022-12-23 11:48:37 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"lat"=>"51.41", "long"=>"-0.292", "button"=>""}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 0.4ms | Allocations: 135)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 8538)
+Completed 200 OK in 199ms (Views: 13.6ms | Allocations: 9807)
+
+
+Started GET "/search?lat=-74.70850&long=40.78375&button=" for ::1 at 2022-12-23 11:53:51 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"lat"=>"-74.70850", "long"=>"40.78375", "button"=>""}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 0.3ms | Allocations: 141)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 8798)
+Completed 200 OK in 240ms (Views: 13.3ms | Allocations: 10540)
+
+
+Started GET "/search?lat=-74.70850&long=40.78375&button=" for ::1 at 2022-12-23 11:54:11 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"lat"=>"-74.70850", "long"=>"40.78375", "button"=>""}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 0.3ms | Allocations: 141)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 8804)
+Completed 200 OK in 119ms (Views: 18.8ms | Allocations: 10540)
+
+
+Started GET "/" for ::1 at 2022-12-23 11:54:16 +0000
+Processing by MuseumsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering museums/index.html.erb within layouts/application
+  Rendered museums/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 328)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 8715)
+Completed 200 OK in 17ms (Views: 16.8ms | Allocations: 8966)
+
+
+Started GET "/search?lat=51.42169990637084&long=-0.2933695767027843&button=" for ::1 at 2022-12-23 11:54:28 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"lat"=>"51.42169990637084", "long"=>"-0.2933695767027843", "button"=>""}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 0.6ms | Allocations: 135)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 8511)
+Completed 200 OK in 204ms (Views: 13.8ms | Allocations: 9874)
+
+
+Started GET "/search?lat=-51.42169990637084&long=-0.2933695767027843&button=" for ::1 at 2022-12-23 11:54:38 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"lat"=>"-51.42169990637084", "long"=>"-0.2933695767027843", "button"=>""}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 0.3ms | Allocations: 135)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 8529)
+Completed 200 OK in 211ms (Views: 22.8ms | Allocations: 9800)
+
+
+Started GET "/search?lat=51.42169990637084&long=-0.2933695767027843&button=" for ::1 at 2022-12-23 11:54:48 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"lat"=>"51.42169990637084", "long"=>"-0.2933695767027843", "button"=>""}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 0.3ms | Allocations: 135)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 8631)
+Completed 200 OK in 107ms (Views: 15.2ms | Allocations: 9934)
+
+
+Started GET "/" for ::1 at 2022-12-23 11:54:57 +0000
+Processing by MuseumsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering museums/index.html.erb within layouts/application
+  Rendered museums/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 277)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 8666)
+Completed 200 OK in 16ms (Views: 15.9ms | Allocations: 8901)
+
+
+Started GET "/search?lat=38.88203167756745&long=-76.98778063713317&button=" for ::1 at 2022-12-23 11:55:21 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"lat"=>"38.88203167756745", "long"=>"-76.98778063713317", "button"=>""}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 0.4ms | Allocations: 135)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 8721)
+Completed 200 OK in 222ms (Views: 15.4ms | Allocations: 10013)
+
+
+Started GET "/search?lat=38.88203167756745&long=-76.98778063713317&button=" for ::1 at 2022-12-23 11:55:32 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"lat"=>"38.88203167756745", "long"=>"-76.98778063713317", "button"=>""}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 0.3ms | Allocations: 141)
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 8917)
+Completed 200 OK in 218ms (Views: 21.6ms | Allocations: 10631)
+
+
+Started GET "/" for ::1 at 2022-12-23 11:56:11 +0000
+Processing by MuseumsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering museums/index.html.erb within layouts/application
+  Rendered museums/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 328)
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 8721)
+Completed 200 OK in 22ms (Views: 21.8ms | Allocations: 8972)
+
+
+Started GET "/search?lat=-75.5255046338253&long=39.71947759497453&button=" for ::1 at 2022-12-23 11:56:19 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"lat"=>"-75.5255046338253", "long"=>"39.71947759497453", "button"=>""}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 0.5ms | Allocations: 135)
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 8529)
+Completed 200 OK in 215ms (Views: 17.2ms | Allocations: 9887)
+
+
+Started GET "/search?lat=-0.2899037822407078&long=51.42050534317828%2C+&button=" for ::1 at 2022-12-23 11:56:45 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"lat"=>"-0.2899037822407078", "long"=>"51.42050534317828, ", "button"=>""}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 0.4ms | Allocations: 134)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 8525)
+Completed 200 OK in 188ms (Views: 14.3ms | Allocations: 9804)
+
+
+Started GET "/search?lat=-0.2899037822407078&long=51.42050534317828&button=" for ::1 at 2022-12-23 11:56:48 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"lat"=>"-0.2899037822407078", "long"=>"51.42050534317828", "button"=>""}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 0.5ms | Allocations: 135)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 8520)
+Completed 200 OK in 226ms (Views: 13.5ms | Allocations: 9794)
+
+
+Started GET "/search?lat=-0.2899037822407078&long=51.42050534317828&button=" for ::1 at 2022-12-23 11:57:22 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"lat"=>"-0.2899037822407078", "long"=>"51.42050534317828", "button"=>""}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 0.3ms | Allocations: 141)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 8798)
+Completed 200 OK in 201ms (Views: 16.4ms | Allocations: 10526)
+
+
+Started GET "/" for ::1 at 2022-12-23 11:57:27 +0000
+Processing by MuseumsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering museums/index.html.erb within layouts/application
+  Rendered museums/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 328)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 8715)
+Completed 200 OK in 16ms (Views: 15.4ms | Allocations: 8966)
+
+
+Started GET "/search?lat=51.42050534317828&long=-0.29022564729488415&button=" for ::1 at 2022-12-23 11:57:46 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"lat"=>"51.42050534317828", "long"=>"-0.29022564729488415", "button"=>""}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 0.3ms | Allocations: 135)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 8808)
+Completed 200 OK in 248ms (Views: 18.4ms | Allocations: 10166)
+
+
+Started GET "/" for ::1 at 2022-12-23 12:09:30 +0000
+Processing by MuseumsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering museums/index.html.erb within layouts/application
+  Rendered museums/index.html.erb within layouts/application (Duration: 103.2ms | Allocations: 17757)
+  Rendered layout layouts/application.html.erb (Duration: 127.2ms | Allocations: 26665)
+Completed 200 OK in 131ms (Views: 129.5ms | Allocations: 27449)
+
+
+Started POST "/" for ::1 at 2022-12-23 12:09:41 +0000
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/" for ::1 at 2022-12-23 12:09:42 +0000
+Processing by MuseumsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering museums/index.html.erb within layouts/application
+  Rendered museums/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 7961)
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 16491)
+Completed 200 OK in 22ms (Views: 22.2ms | Allocations: 16762)
+
+
+Started GET "/" for ::1 at 2022-12-23 12:11:55 +0000
+Processing by MuseumsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering museums/index.html.erb within layouts/application
+  Rendered museums/index.html.erb within layouts/application (Duration: 8.4ms | Allocations: 7922)
+  Rendered layout layouts/application.html.erb (Duration: 25.7ms | Allocations: 16733)
+Completed 200 OK in 28ms (Views: 27.4ms | Allocations: 17493)
+
+
+Started GET "/search?museum%5Blat%5D=51.42019757911667&museum%5Blong%5D=-0.29054751234906057&commit=Save+Museum" for ::1 at 2022-12-23 12:12:09 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"museum"=>{"lat"=>"51.42019757911667", "long"=>"-0.29054751234906057"}, "commit"=>"Save Museum"}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 1.8ms | Allocations: 220)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 8605)
+Completed 200 OK in 186ms (Views: 16.2ms | Allocations: 10062)
+
+
+Started GET "/search?museum%5Blat%5D=51.42019757911667&museum%5Blong%5D=-0.29054751234906057&commit=Save+Museum" for ::1 at 2022-12-23 12:12:15 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"museum"=>{"lat"=>"51.42019757911667", "long"=>"-0.29054751234906057"}, "commit"=>"Save Museum"}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 0.2ms | Allocations: 134)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 8525)
+Completed 200 OK in 152ms (Views: 13.6ms | Allocations: 9818)
+
+
+Started GET "/search?museum%5Blat%5D=-0.29054751234906057&museum%5Blong%5D=51.42019757911667&commit=Save+Museum" for ::1 at 2022-12-23 12:12:35 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"museum"=>{"lat"=>"-0.29054751234906057", "long"=>"51.42019757911667"}, "commit"=>"Save Museum"}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 0.3ms | Allocations: 134)
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 8540)
+Completed 200 OK in 139ms (Views: 22.0ms | Allocations: 9837)
+
+
+Started GET "/search?museum%5Blat%5D=-0.29054751234906057&museum%5Blong%5D=51.42019757911667&commit=Save+Museum" for ::1 at 2022-12-23 12:13:25 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"museum"=>{"lat"=>"-0.29054751234906057", "long"=>"51.42019757911667"}, "commit"=>"Save Museum"}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 0.8ms | Allocations: 253)
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 9394)
+Completed 200 OK in 144ms (Views: 21.7ms | Allocations: 11221)
+
+
+Started GET "/search?museum%5Blat%5D=-0.29054751234906057&museum%5Blong%5D=51.42019757911667&commit=Save+Museum" for ::1 at 2022-12-23 12:13:26 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"museum"=>{"lat"=>"-0.29054751234906057", "long"=>"51.42019757911667"}, "commit"=>"Save Museum"}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 0.4ms | Allocations: 134)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 8534)
+Completed 200 OK in 158ms (Views: 15.5ms | Allocations: 9914)
+
+
+Started GET "/" for ::1 at 2022-12-23 12:13:29 +0000
+Processing by MuseumsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering museums/index.html.erb within layouts/application
+  Rendered museums/index.html.erb within layouts/application (Duration: 23.0ms | Allocations: 8997)
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 9076)
+Completed 500 Internal Server Error in 25ms (Allocations: 9363)
+
+
+  
+ActionView::Template::Error ():
+    24:   <%= f.input :long %>
+    25:   <%= f.button :submit %>
+    26: <% end %>
+    27: <% raise %>
+  
+app/views/museums/index.html.erb:27
+Started PUT "/__web_console/repl_sessions/37727c71fd05b2e30665798b9fe82358" for ::1 at 2022-12-23 12:13:33 +0000
+Started PUT "/__web_console/repl_sessions/37727c71fd05b2e30665798b9fe82358" for ::1 at 2022-12-23 12:13:34 +0000
+Started GET "/" for ::1 at 2022-12-23 12:13:46 +0000
+Processing by MuseumsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering museums/index.html.erb within layouts/application
+  Rendered museums/index.html.erb within layouts/application (Duration: 15.4ms | Allocations: 8291)
+  Rendered layout layouts/application.html.erb (Duration: 29.9ms | Allocations: 17163)
+Completed 200 OK in 35ms (Views: 34.3ms | Allocations: 17977)
+
+
+Started POST "/search" for ::1 at 2022-12-23 12:14:00 +0000
+  
+ActionController::RoutingError (No route matches [POST] "/search"):
+  
+Started GET "/" for ::1 at 2022-12-23 12:14:01 +0000
+Processing by MuseumsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering museums/index.html.erb within layouts/application
+  Rendered museums/index.html.erb within layouts/application (Duration: 12.1ms | Allocations: 7716)
+  Rendered layout layouts/application.html.erb (Duration: 29.6ms | Allocations: 16238)
+Completed 200 OK in 31ms (Views: 30.3ms | Allocations: 16489)
+
+
+Started GET "/" for ::1 at 2022-12-23 12:14:22 +0000
+Processing by MuseumsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering museums/index.html.erb within layouts/application
+  Rendered museums/index.html.erb within layouts/application (Duration: 8.4ms | Allocations: 7922)
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 16736)
+Completed 200 OK in 24ms (Views: 23.0ms | Allocations: 17494)
+
+
+Started GET "/search?museum%5Blat%5D=23&museum%5Blong%5D=0&commit=Save+Museum" for ::1 at 2022-12-23 12:14:29 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"museum"=>{"lat"=>"23", "long"=>"0"}, "commit"=>"Save Museum"}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 0.5ms | Allocations: 220)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 8620)
+Completed 200 OK in 165ms (Views: 14.1ms | Allocations: 10057)
+
+
+Started GET "/search?museum%5Blat%5D=0&museum%5Blong%5D=0&commit=Save+Museum" for ::1 at 2022-12-23 12:15:16 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"museum"=>{"lat"=>"0", "long"=>"0"}, "commit"=>"Save Museum"}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 0.4ms | Allocations: 134)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 8519)
+Completed 200 OK in 175ms (Views: 15.6ms | Allocations: 9794)
+
+
+Started GET "/search?museum%5Blat%5D=0&museum%5Blong%5D=0&commit=Save+Museum" for ::1 at 2022-12-23 12:16:39 +0000
+Processing by MuseumsController#search as HTML
+  Parameters: {"museum"=>{"lat"=>"0", "long"=>"0"}, "commit"=>"Save Museum"}
+  Rendering layout layouts/application.html.erb
+  Rendering museums/search.html.erb within layouts/application
+  Rendered museums/search.html.erb within layouts/application (Duration: 0.5ms | Allocations: 251)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 9375)
+Completed 200 OK in 183ms (Views: 16.8ms | Allocations: 11412)
+
+
+Started GET "/" for ::1 at 2022-12-23 12:16:42 +0000
+Processing by MuseumsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering museums/index.html.erb within layouts/application
+  Rendered museums/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 538)
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 8951)
+Completed 200 OK in 24ms (Views: 23.7ms | Allocations: 9253)
+
+
+Started GET "/" for ::1 at 2022-12-23 12:16:50 +0000
+Processing by MuseumsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering museums/index.html.erb within layouts/application
+  Rendered museums/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 592)
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 9700)
+Completed 200 OK in 27ms (Views: 26.7ms | Allocations: 10464)
+
+
